@@ -14,13 +14,13 @@ class App extends Component {
   switchNameHandler = (newName) => {
     this.setState({persons: [
       { name: 'pallavi', age: 24 },
-      { name: newName, age: 28 }  
+      { name: newName, age: 28 } 
     ]});
   }
   nameChangedHandler = (event) => {
     this.setState({persons: [
       { name: 'pallavi', age: 24 },
-      { name: event.target.value, age: 28 }  
+      { name: event.target.value, age: 28 }
     ]});
   }
 
@@ -40,8 +40,11 @@ class App extends Component {
     let persons = null;
     if(this.state.showPersons){
       persons = (
-<div>
-      <Person click={this.switchNameHandler.bind(this,'hello')} name={this.state.persons[0].name} age={this.state.persons[0].age}>My hobbies is dancing</Person>
+
+      <div>
+        {this.state.persons.map((person) => {
+      return <Person   key={person.name} name={person.name} age={person.age}>My hobbies is dancing</Person>
+        })}
       <Person name={this.state.persons[1].name} changed={this.nameChangedHandler} age={this.state.persons[1].age}>My hobbies is dancing</Person>
       </div>
       );
