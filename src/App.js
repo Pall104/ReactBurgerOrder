@@ -12,12 +12,12 @@ class App extends Component {
     showPersons: false
   }
 
-  nameChangedHandler = (event) => {
-    this.setState({persons: [
-      { name: 'pallavi', age: 24 },
-      { name: event.target.value, age: 28 }
-    ]});
-  }
+  // nameChangedHandler = (event) => {
+  //   this.setState({persons: [
+  //     { name: 'pallavi', age: 24 },
+  //     { name: event.target.value, age: 28 }
+  //   ]});
+  // }
 
   deletePersonHandler = (personIndex) =>{
     const persons = this.state.persons;
