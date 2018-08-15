@@ -49,14 +49,14 @@ class App extends Component {
       </div>
       );
     }
+
    return (
       <div className="App">
-      <h1>Hi!I am a react app</h1>
+      <h1>Welcome to the React App!!</h1>
       <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
       {persons}
       </div>
    );
-  // return React.createElement('div',{className:'App'},React.createElement('h1',null,'Hi I\'m a React App!!!'));
   }
 }
 
