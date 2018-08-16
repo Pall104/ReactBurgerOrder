@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from './App.css';
 import Person from './Person/Person';
 
 class App extends Component {
@@ -58,18 +58,18 @@ class App extends Component {
     
     }
 
-      let classes = [];
+      let assignedClasses = [];
       if(this.state.persons.length <=2){
-        classes.push('red');
+        assignedClasses.push(classes.red);
       }
       if(this.state.persons.length <=1){
-        classes.push('bold');
+        assignedClasses.push(classes.bold);
       }
 
 
    return (
-      <div className="App">
-      <h1 className={classes.join('')} >Welcome to the React App!!</h1>
+      <div className={classes.App}>
+      <h1 className={assignedClasses.join( ' ' )} >Welcome to the React App!!</h1>
       <button style={style} onClick={this.togglePersonsHandler}>Toggle Persons</button>
       {persons}
       </div>
@@ -77,4 +77,4 @@ class App extends Component {
   }
 }
 
-export default Radium(App);
+export default App;
