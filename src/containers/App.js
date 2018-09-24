@@ -1,17 +1,22 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 
-class App extends Component {
-  state ={
-    persons: [
-      {id:1, name: 'pallavi', age: 24 },
-      {id:2 ,name: 'sonam', age: 28 }  
-    ],
-    otherState : 'some other state',
-    showPersons: false
+class App extends PureComponent {
+  constructor(props){
+    super(props);
+    this.state ={
+      persons: [
+        {id:1, name: 'pallavi', age: 24 },
+        {id:2 ,name: 'sonam', age: 28 }  
+      ],
+      otherState : 'some other state',
+      showPersons: false
+    };
+  
   }
+ 
 
   nameChangedHandler = (event , id) => {
     const personIndex = this.state.persons.findIndex( p => {
@@ -54,6 +59,7 @@ class App extends Component {
     }
    return (
       <div className={classes.App}>
+      <button onClick={()=> {this.setState({showPersons: true})}}>Show Persons</button>
       <Cockpit showPersons={this.state.showPersons} persons={this.state.persons} clicked={this.togglePersonsHandler}/>
       {persons}
       </div>
